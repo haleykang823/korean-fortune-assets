@@ -2,6 +2,11 @@
 
 이름과 생년월일만 입력받아 운세를 보여주는 프로그램을 만들기 위한 데이터, 계산 로직, 외부 에셋 출처를 모았습니다.
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fhaleykang823%2Fkorean-fortune-assets)
+
+빌드 설정이 필요 없는 정적 사이트입니다. 위 버튼을 누르고 Vercel에서 저장소를 선택한 뒤
+Framework Preset을 **Other**로 두고 Deploy를 누르면 끝납니다.
+
 ---
 
 ## 폴더 구조
