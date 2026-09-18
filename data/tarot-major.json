@@ -1,0 +1,31 @@
+{
+  "meta": {
+    "title": "타로 메이저 아르카나 22장",
+    "imageNote": "라이더-웨이트-스미스(1909) 원본 이미지는 미국 기준 퍼블릭 도메인이며 Wikimedia Commons에서 고해상도로 받을 수 있습니다. 국가별 저작권 판단이 다를 수 있으니 상용 배포 전에는 확인하세요. 자세한 출처는 assets/SOURCES.md 참고.",
+    "usage": "이름+생년월일 해시로 카드를 결정하면 같은 사람에게 항상 같은 '오늘의 카드'를 줄 수 있습니다."
+  },
+  "cards": [
+    { "n": 0,  "ko": "바보", "en": "The Fool", "emoji": "🃏", "upright": ["새로운 시작", "순수함", "모험"], "reversed": ["무모함", "준비 부족"], "element": "공기" },
+    { "n": 1,  "ko": "마법사", "en": "The Magician", "emoji": "🪄", "upright": ["재능 발현", "실행력", "기회"], "reversed": ["속임수", "능력 낭비"], "element": "수성" },
+    { "n": 2,  "ko": "여사제", "en": "The High Priestess", "emoji": "🌙", "upright": ["직관", "비밀", "내면의 지혜"], "reversed": ["혼란", "감춰진 진실"], "element": "달" },
+    { "n": 3,  "ko": "여황제", "en": "The Empress", "emoji": "👑", "upright": ["풍요", "돌봄", "결실"], "reversed": ["과보호", "정체"], "element": "금성" },
+    { "n": 4,  "ko": "황제", "en": "The Emperor", "emoji": "🏛️", "upright": ["권위", "안정", "체계"], "reversed": ["독단", "경직"], "element": "양자리" },
+    { "n": 5,  "ko": "교황", "en": "The Hierophant", "emoji": "📜", "upright": ["가르침", "전통", "조언자"], "reversed": ["형식주의", "고정관념"], "element": "황소자리" },
+    { "n": 6,  "ko": "연인", "en": "The Lovers", "emoji": "💞", "upright": ["사랑", "선택", "조화"], "reversed": ["갈등", "미련"], "element": "쌍둥이자리" },
+    { "n": 7,  "ko": "전차", "en": "The Chariot", "emoji": "🏇", "upright": ["전진", "승리", "의지"], "reversed": ["폭주", "방향 상실"], "element": "게자리" },
+    { "n": 8,  "ko": "힘", "en": "Strength", "emoji": "🦁", "upright": ["용기", "인내", "부드러운 힘"], "reversed": ["자신감 저하", "충동"], "element": "사자자리" },
+    { "n": 9,  "ko": "은둔자", "en": "The Hermit", "emoji": "🕯️", "upright": ["성찰", "고요", "탐구"], "reversed": ["고립", "외면"], "element": "처녀자리" },
+    { "n": 10, "ko": "운명의 수레바퀴", "en": "Wheel of Fortune", "emoji": "🎡", "upright": ["전환점", "행운", "순환"], "reversed": ["악순환", "때를 놓침"], "element": "목성" },
+    { "n": 11, "ko": "정의", "en": "Justice", "emoji": "⚖️", "upright": ["공정", "균형", "결단"], "reversed": ["편견", "불공정"], "element": "천칭자리" },
+    { "n": 12, "ko": "매달린 사람", "en": "The Hanged Man", "emoji": "🙃", "upright": ["관점 전환", "기다림", "희생"], "reversed": ["정체", "헛된 인내"], "element": "해왕성" },
+    { "n": 13, "ko": "죽음", "en": "Death", "emoji": "🦋", "upright": ["끝과 시작", "변화", "정리"], "reversed": ["집착", "변화 거부"], "element": "전갈자리" },
+    { "n": 14, "ko": "절제", "en": "Temperance", "emoji": "🏺", "upright": ["조화", "절제", "치유"], "reversed": ["과함", "불균형"], "element": "사수자리" },
+    { "n": 15, "ko": "악마", "en": "The Devil", "emoji": "⛓️", "upright": ["유혹", "집착", "욕망"], "reversed": ["해방", "자각"], "element": "염소자리" },
+    { "n": 16, "ko": "탑", "en": "The Tower", "emoji": "🗼", "upright": ["급변", "각성", "붕괴"], "reversed": ["지연된 위기", "회피"], "element": "화성" },
+    { "n": 17, "ko": "별", "en": "The Star", "emoji": "⭐", "upright": ["희망", "영감", "회복"], "reversed": ["실망", "자신감 상실"], "element": "물병자리" },
+    { "n": 18, "ko": "달", "en": "The Moon", "emoji": "🌕", "upright": ["불안", "무의식", "모호함"], "reversed": ["오해 해소", "명료함"], "element": "물고기자리" },
+    { "n": 19, "ko": "태양", "en": "The Sun", "emoji": "☀️", "upright": ["성공", "활력", "기쁨"], "reversed": ["일시적 침체", "과신"], "element": "태양" },
+    { "n": 20, "ko": "심판", "en": "Judgement", "emoji": "📯", "upright": ["부활", "결산", "부름"], "reversed": ["후회", "미루기"], "element": "명왕성" },
+    { "n": 21, "ko": "세계", "en": "The World", "emoji": "🌍", "upright": ["완성", "성취", "통합"], "reversed": ["미완", "지연"], "element": "토성" }
+  ]
+}

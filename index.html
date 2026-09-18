@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>운세 프로그램 자료 모음</title>
+<meta name="description" content="이름과 생년월일로 운세를 만드는 프로그램용 데이터·계산 로직·에셋 모음">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#12101a; --panel:#1c1930; --panel-2:#252040; --line:#332d55;
+    --text:#ece9f5; --muted:#9d97be; --gold:#d7b56d; --accent:#8e7cd8;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;padding:56px 16px;background:
+      radial-gradient(1000px 520px at 50% -10%, #2a2350 0%, transparent 60%), var(--bg);
+    color:var(--text);font-family:'Gowun Dodum',system-ui,sans-serif;min-height:100vh}
+  .wrap{max-width:760px;margin:0 auto}
+  .eyebrow{color:var(--accent);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
+  h1{font-family:'Gowun Batang',serif;font-size:2rem;margin:0 0 12px;line-height:1.35}
+  .lede{color:var(--muted);font-size:1rem;line-height:1.75;margin:0 0 28px;max-width:56ch}
+  .cta{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:40px}
+  .btn{display:inline-block;text-decoration:none;border-radius:10px;padding:12px 22px;font-weight:700;font-size:.95rem}
+  .btn-primary{background:linear-gradient(180deg,var(--gold),#bb9a53);color:#241d0c}
+  .btn-ghost{background:var(--panel-2);color:var(--text);border:1px solid var(--line)}
+  .btn:hover{filter:brightness(1.1)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-bottom:32px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .card h2{font-family:'Gowun Batang',serif;font-size:.95rem;color:var(--gold);margin:0 0 8px}
+  .card ul{margin:0;padding-left:18px;color:var(--muted);font-size:.85rem;line-height:1.8}
+  .card code{color:var(--text);font-size:.82rem}
+  .note{color:var(--muted);font-size:.8rem;line-height:1.7;border-top:1px solid var(--line);padding-top:18px}
+  @media (max-width:520px){ body{padding:36px 16px} h1{font-size:1.5rem} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="eyebrow">Fortune Assets</p>
+  <h1>이름과 생년월일로<br>운세를 만드는 데 필요한 것들</h1>
+  <p class="lede">
+    사주·띠·별자리·성명학 데이터와 계산 로직, 그리고 외부 에셋 출처를 한곳에 모았습니다.
+    JSON은 언어 중립이라 어떤 스택에서도 그대로 쓸 수 있고, 계산 모듈은 의존성이 없습니다.
+  </p>
+
+  <div class="cta">
+    <a class="btn btn-primary" href="./demo/index.html">데모 열어보기</a>
+    <a class="btn btn-ghost" href="https://github.com/haleykang823/korean-fortune-assets">GitHub 저장소</a>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h2>데이터 (JSON 8종)</h2>
+      <ul>
+        <li>십이지 12종 + 궁합표</li>
+        <li>천간 10간, 오행 상생·상극</li>
+        <li>서양 12별자리, 생명수</li>
+        <li>한글 획수표 + 81수리</li>
+        <li>타로 메이저 22장</li>
+        <li>운세 문구 템플릿</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>계산 로직</h2>
+      <ul>
+        <li><code>fortune-core.js</code> — 의존성 0</li>
+        <li>사주 네 기둥 (연·월·일·시)</li>
+        <li>입춘 / 야자시 / 진태양시 처리</li>
+        <li>이름 사격(四格) 계산</li>
+        <li>시드 기반 결정론적 결과</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>에셋 출처</h2>
+      <ul>
+        <li>한글 폰트 (OFL)</li>
+        <li>아이콘 · 일러스트</li>
+        <li>색 팔레트 3종</li>
+        <li>음력·절기 라이브러리</li>
+        <li>라이선스 전부 명시</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="note">
+    운세 결과는 전통 명리·민속 자료를 바탕으로 한 오락용 콘텐츠입니다.
+    월주는 절기 근사일을 쓰기 때문에 절입일 전후 하루에 태어난 경우 달라질 수 있습니다.
+    자세한 내용은 저장소의 README를 확인하세요.
+  </p>
+</div>
+</body>
+</html>

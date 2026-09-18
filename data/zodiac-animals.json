@@ -1,0 +1,143 @@
+{
+  "meta": {
+    "title": "십이지(띠) 데이터",
+    "note": "yearMod = 연도 % 12 로 띠를 찾습니다. 띠의 기준일은 유파에 따라 입춘(2/4경) 또는 음력 설날로 갈립니다. app에서 어느 기준을 쓸지 먼저 정하세요.",
+    "source": "전통 명리/민속 자료(공유 지식)를 정리한 것. 성격 키워드는 직접 작성."
+  },
+  "animals": [
+    {
+      "id": "rat", "order": 1, "name": "쥐", "hanja": "子", "emoji": "🐭",
+      "branch": "자", "yearMod": 4, "element": "수", "yinYang": "양",
+      "hours": "23:00~01:00", "month": 11, "direction": "북", "season": "겨울",
+      "traits": ["기민함", "눈치", "절약", "재치"],
+      "strengths": ["상황 판단이 빠르다", "위기에서 살 길을 잘 찾는다", "돈 관리에 밝다"],
+      "weaknesses": ["지나치게 계산적일 수 있다", "걱정이 많다"],
+      "bestMatch": ["용", "원숭이", "소"],
+      "worstMatch": ["말"]
+    },
+    {
+      "id": "ox", "order": 2, "name": "소", "hanja": "丑", "emoji": "🐮",
+      "branch": "축", "yearMod": 5, "element": "토", "yinYang": "음",
+      "hours": "01:00~03:00", "month": 12, "direction": "북북동", "season": "겨울",
+      "traits": ["성실", "인내", "우직", "책임감"],
+      "strengths": ["한번 시작하면 끝을 본다", "신뢰를 쌓는 힘이 크다"],
+      "weaknesses": ["고집이 세다", "변화에 느리게 반응한다"],
+      "bestMatch": ["뱀", "닭", "쥐"],
+      "worstMatch": ["양"]
+    },
+    {
+      "id": "tiger", "order": 3, "name": "호랑이", "hanja": "寅", "emoji": "🐯",
+      "branch": "인", "yearMod": 6, "element": "목", "yinYang": "양",
+      "hours": "03:00~05:00", "month": 1, "direction": "동북동", "season": "봄",
+      "traits": ["용기", "카리스마", "추진력", "정의감"],
+      "strengths": ["앞장서는 결단력", "불의를 못 참는 강단"],
+      "weaknesses": ["성급하다", "감정 기복이 크다"],
+      "bestMatch": ["말", "개", "돼지"],
+      "worstMatch": ["원숭이"]
+    },
+    {
+      "id": "rabbit", "order": 4, "name": "토끼", "hanja": "卯", "emoji": "🐰",
+      "branch": "묘", "yearMod": 7, "element": "목", "yinYang": "음",
+      "hours": "05:00~07:00", "month": 2, "direction": "동", "season": "봄",
+      "traits": ["온화", "섬세", "사교성", "미적 감각"],
+      "strengths": ["사람의 기분을 잘 읽는다", "분위기를 부드럽게 만든다"],
+      "weaknesses": ["거절을 어려워한다", "결정을 미룬다"],
+      "bestMatch": ["양", "돼지", "개"],
+      "worstMatch": ["닭"]
+    },
+    {
+      "id": "dragon", "order": 5, "name": "용", "hanja": "辰", "emoji": "🐲",
+      "branch": "진", "yearMod": 8, "element": "토", "yinYang": "양",
+      "hours": "07:00~09:00", "month": 3, "direction": "동남동", "season": "봄",
+      "traits": ["포부", "자신감", "창의", "존재감"],
+      "strengths": ["큰 그림을 그린다", "주목받는 자리에서 강하다"],
+      "weaknesses": ["현실 감각이 흐려질 때가 있다", "자존심이 세다"],
+      "bestMatch": ["쥐", "원숭이", "닭"],
+      "worstMatch": ["개"]
+    },
+    {
+      "id": "snake", "order": 6, "name": "뱀", "hanja": "巳", "emoji": "🐍",
+      "branch": "사", "yearMod": 9, "element": "화", "yinYang": "음",
+      "hours": "09:00~11:00", "month": 4, "direction": "남남동", "season": "여름",
+      "traits": ["통찰", "신중", "직관", "집중력"],
+      "strengths": ["본질을 꿰뚫어 본다", "말수는 적어도 핵심을 짚는다"],
+      "weaknesses": ["속을 잘 드러내지 않는다", "의심이 많다"],
+      "bestMatch": ["닭", "소", "원숭이"],
+      "worstMatch": ["돼지"]
+    },
+    {
+      "id": "horse", "order": 7, "name": "말", "hanja": "午", "emoji": "🐴",
+      "branch": "오", "yearMod": 10, "element": "화", "yinYang": "양",
+      "hours": "11:00~13:00", "month": 5, "direction": "남", "season": "여름",
+      "traits": ["활동성", "자유", "낙천", "속도"],
+      "strengths": ["에너지가 넘친다", "새로운 환경에 빨리 적응한다"],
+      "weaknesses": ["끈기가 부족할 수 있다", "구속을 못 견딘다"],
+      "bestMatch": ["호랑이", "개", "양"],
+      "worstMatch": ["쥐"]
+    },
+    {
+      "id": "goat", "order": 8, "name": "양", "hanja": "未", "emoji": "🐑",
+      "branch": "미", "yearMod": 11, "element": "토", "yinYang": "음",
+      "hours": "13:00~15:00", "month": 6, "direction": "남남서", "season": "여름",
+      "traits": ["다정", "예술성", "배려", "평화주의"],
+      "strengths": ["타인의 아픔에 공감한다", "손끝이 야무지다"],
+      "weaknesses": ["마음이 여려 상처를 잘 받는다", "우유부단하다"],
+      "bestMatch": ["토끼", "돼지", "말"],
+      "worstMatch": ["소"]
+    },
+    {
+      "id": "monkey", "order": 9, "name": "원숭이", "hanja": "申", "emoji": "🐵",
+      "branch": "신", "yearMod": 0, "element": "금", "yinYang": "양",
+      "hours": "15:00~17:00", "month": 7, "direction": "서남서", "season": "가을",
+      "traits": ["영리", "재주", "유머", "응용력"],
+      "strengths": ["문제를 다른 각도로 푼다", "배움이 빠르다"],
+      "weaknesses": ["싫증을 빨리 낸다", "잔꾀를 부릴 때가 있다"],
+      "bestMatch": ["쥐", "용", "뱀"],
+      "worstMatch": ["호랑이"]
+    },
+    {
+      "id": "rooster", "order": 10, "name": "닭", "hanja": "酉", "emoji": "🐔",
+      "branch": "유", "yearMod": 1, "element": "금", "yinYang": "음",
+      "hours": "17:00~19:00", "month": 8, "direction": "서", "season": "가을",
+      "traits": ["정확", "부지런", "솔직", "완벽주의"],
+      "strengths": ["시간과 약속을 지킨다", "디테일을 놓치지 않는다"],
+      "weaknesses": ["직설적이라 오해를 산다", "자기 기준이 높다"],
+      "bestMatch": ["소", "뱀", "용"],
+      "worstMatch": ["토끼"]
+    },
+    {
+      "id": "dog", "order": 11, "name": "개", "hanja": "戌", "emoji": "🐶",
+      "branch": "술", "yearMod": 2, "element": "토", "yinYang": "양",
+      "hours": "19:00~21:00", "month": 9, "direction": "서북서", "season": "가을",
+      "traits": ["의리", "정직", "충직", "보호본능"],
+      "strengths": ["내 사람을 끝까지 지킨다", "공정함을 중시한다"],
+      "weaknesses": ["걱정과 경계가 많다", "한번 실망하면 마음을 닫는다"],
+      "bestMatch": ["호랑이", "말", "토끼"],
+      "worstMatch": ["용"]
+    },
+    {
+      "id": "pig", "order": 12, "name": "돼지", "hanja": "亥", "emoji": "🐷",
+      "branch": "해", "yearMod": 3, "element": "수", "yinYang": "음",
+      "hours": "21:00~23:00", "month": 10, "direction": "북북서", "season": "겨울",
+      "traits": ["너그러움", "복", "진솔", "낙천"],
+      "strengths": ["사람을 의심 없이 품는다", "복이 따르는 기질"],
+      "weaknesses": ["거절을 못 해 손해를 본다", "게을러질 때가 있다"],
+      "bestMatch": ["토끼", "양", "호랑이"],
+      "worstMatch": ["뱀"]
+    }
+  ],
+  "relations": {
+    "삼합": [
+      { "branches": ["신", "자", "진"], "element": "수", "meaning": "뜻이 같아 크게 뭉치는 조합" },
+      { "branches": ["해", "묘", "미"], "element": "목", "meaning": "성장과 확장의 조합" },
+      { "branches": ["인", "오", "술"], "element": "화", "meaning": "열정과 추진의 조합" },
+      { "branches": ["사", "유", "축"], "element": "금", "meaning": "결실과 완성의 조합" }
+    ],
+    "육합": [
+      ["자", "축"], ["인", "해"], ["묘", "술"], ["진", "유"], ["사", "신"], ["오", "미"]
+    ],
+    "충": [
+      ["자", "오"], ["축", "미"], ["인", "신"], ["묘", "유"], ["진", "술"], ["사", "해"]
+    ]
+  }
+}

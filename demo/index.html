@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>운세 데이터 확인용 데모</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#12101a; --panel:#1c1930; --panel-2:#252040; --line:#332d55;
+    --text:#ece9f5; --muted:#9d97be; --gold:#d7b56d; --accent:#8e7cd8;
+    --great:#6bcf9e; --good:#7fb3d5; --normal:#d7b56d; --caution:#e08a7a;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;padding:32px 16px;background:
+      radial-gradient(1000px 500px at 50% -10%, #2a2350 0%, transparent 60%), var(--bg);
+    color:var(--text);font-family:'Gowun Dodum',system-ui,sans-serif;min-height:100vh}
+  .wrap{max-width:720px;margin:0 auto}
+  h1{font-family:'Gowun Batang',serif;font-size:1.6rem;margin:0 0 4px;letter-spacing:.02em}
+  .sub{color:var(--muted);font-size:.85rem;margin-bottom:24px}
+  form{display:flex;gap:8px;flex-wrap:wrap;background:var(--panel);border:1px solid var(--line);
+    border-radius:14px;padding:14px;margin-bottom:20px}
+  input,select,button{font:inherit;border-radius:9px;border:1px solid var(--line);
+    background:var(--panel-2);color:var(--text);padding:10px 12px}
+  input{flex:1 1 130px;min-width:0}
+  button{background:linear-gradient(180deg,var(--gold),#bb9a53);color:#241d0c;border:none;
+    font-weight:700;cursor:pointer;padding:10px 20px}
+  button:hover{filter:brightness(1.08)}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;
+    padding:18px;margin-bottom:14px}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+  .chip{background:var(--panel-2);border:1px solid var(--line);border-radius:999px;
+    padding:5px 12px;font-size:.82rem;color:var(--muted)}
+  .chip b{color:var(--text);font-weight:400}
+  .total{font-family:'Gowun Batang',serif;font-size:2.6rem;color:var(--gold);line-height:1}
+  .opening{font-family:'Gowun Batang',serif;font-size:1.05rem;margin:0 0 12px}
+  .closing{color:var(--muted);font-size:.9rem;margin-top:12px;font-style:italic}
+  .cat{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-top:1px solid var(--line)}
+  .cat:first-child{border-top:none}
+  .cat .ico{font-size:1.3rem;width:28px;text-align:center;flex:none}
+  .cat .body{flex:1}
+  .cat .head{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+  .cat .label{font-weight:700}
+  .cat .score{font-family:'Gowun Batang',serif;font-size:.95rem}
+  .cat p{margin:4px 0 6px;font-size:.92rem;line-height:1.6}
+  .bar{height:5px;border-radius:99px;background:var(--panel-2);overflow:hidden}
+  .bar i{display:block;height:100%;border-radius:99px}
+  .b-great{color:var(--great)} .b-good{color:var(--good)}
+  .b-normal{color:var(--normal)} .b-caution{color:var(--caution)}
+  .bg-great{background:var(--great)} .bg-good{background:var(--good)}
+  .bg-normal{background:var(--normal)} .bg-caution{background:var(--caution)}
+  h2{font-family:'Gowun Batang',serif;font-size:1rem;margin:0 0 10px;color:var(--gold)}
+  .kv{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:.88rem}
+  .kv dt{color:var(--muted)} .kv dd{margin:0}
+  .note{color:var(--muted);font-size:.78rem;line-height:1.6;margin-top:18px;text-align:center}
+  pre{background:#0d0b14;border:1px solid var(--line);border-radius:10px;padding:12px;
+    overflow:auto;font-size:.72rem;color:#b9b3d8;max-height:280px}
+  details summary{cursor:pointer;color:var(--muted);font-size:.85rem}
+  .err{color:var(--caution)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>운세 데이터 확인용 데모</h1>
+  <p class="sub">fortune-core.js + data/*.json이 제대로 맞물리는지 보는 최소 화면입니다. 실제 앱의 디자인 시안이 아닙니다.</p>
+
+  <form id="f">
+    <input id="name" placeholder="이름" value="김민수" required>
+    <input id="birth" type="date" value="1995-08-23" required>
+    <select id="hour">
+      <option value="">태어난 시 모름</option>
+    </select>
+    <button type="submit">운세 보기</button>
+  </form>
+
+  <div id="out"></div>
+</div>
+
+<script type="module">
+import { loadFortuneData } from '../src/load-data.js';
+import { buildFortune } from '../src/fortune-core.js';
+
+const hourSel = document.getElementById('hour');
+for (let h = 0; h < 24; h++) {
+  hourSel.insertAdjacentHTML('beforeend',
+    `<option value="${h}">${String(h).padStart(2,'0')}시</option>`);
+}
+
+const out = document.getElementById('out');
+let data;
+
+try {
+  data = await loadFortuneData('../data');
+  window.__data = data; // 콘솔 디버깅용
+} catch (e) {
+  out.innerHTML = `<div class="card err">데이터 로드 실패: ${e.message}</div>`;
+  throw e;
+}
+
+function render(r) {
+  const cats = r.categories.map(c => `
+    <div class="cat">
+      <div class="ico">${c.emoji}</div>
+      <div class="body">
+        <div class="head">
+          <span class="label">${c.label}</span>
+          <span class="score b-${c.band}">${c.score}점 · ${c.bandLabel}</span>
+        </div>
+        <p>${c.message}</p>
+        <div class="bar"><i class="bg-${c.band}" style="width:${c.score}%"></i></div>
+      </div>
+    </div>`).join('');
+
+  const p = r.profile;
+  const name81 = p.nameFortune?.형격;
+
+  out.innerHTML = `
+    <div class="card">
+      <p class="opening">${r.summary.opening}</p>
+      <div class="total">${r.summary.totalScore}<span style="font-size:1rem"> / 100</span></div>
+      <div class="chips">
+        <span class="chip">오늘의 기운 <b>${r.summary.bandLabel}</b></span>
+        <span class="chip">${p.zodiac.emoji ?? ''} <b>${p.zodiac.name ?? p.zodiac.animal}띠</b></span>
+        <span class="chip">${p.westernSign?.symbol ?? ''} <b>${p.westernSign?.ko ?? '-'}</b></span>
+        <span class="chip">생명수 <b>${p.lifePath.n} ${p.lifePath.title ?? ''}</b></span>
+      </div>
+      <p class="closing">${r.summary.closing}</p>
+    </div>
+
+    <div class="card">${cats}</div>
+
+    <div class="card">
+      <h2>행운 아이템</h2>
+      <div class="chips">
+        <span class="chip">색 <b style="color:${r.lucky.color.hex}">${r.lucky.color.name}</b></span>
+        <span class="chip">숫자 <b>${r.lucky.number}</b></span>
+        <span class="chip">방위 <b>${r.lucky.direction}쪽</b></span>
+        <span class="chip">물건 <b>${r.lucky.item}</b></span>
+        <span class="chip">음식 <b>${r.lucky.food}</b></span>
+        <span class="chip">시간 <b>${r.lucky.timeSlot.label} ${r.lucky.timeSlot.range}</b></span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>사주 · 이름 풀이</h2>
+      <dl class="kv">
+        <dt>사주</dt><dd>${p.saju.text} <span style="color:var(--muted)">(절기 근사)</span></dd>
+        <dt>일간</dt><dd>${p.saju.dayMaster.name} · ${p.saju.dayMaster.element}</dd>
+        <dt>오행</dt><dd>${Object.entries(p.saju.elements.counts).map(([k,v])=>`${k} ${v}`).join(' / ')}
+          ${p.saju.elements.missing.length ? `<span style="color:var(--caution)"> · 부족: ${p.saju.elements.missing.join(', ')}</span>` : ''}</dd>
+        ${name81 ? `<dt>이름(형격)</dt><dd>${name81.number}수 ${name81.name} · ${name81.fortune} — ${name81.meaning}</dd>` : ''}
+        <dt>조언</dt><dd>${r.advice}</dd>
+        <dt>주의</dt><dd>${r.warning}</dd>
+      </dl>
+    </div>
+
+    <details class="card">
+      <summary>결과 객체 원본 보기 (JSON)</summary>
+      <pre>${JSON.stringify(r, null, 2)}</pre>
+    </details>
+
+    <p class="note">${r.disclaimer}</p>`;
+}
+
+function run(e) {
+  e?.preventDefault();
+  const hourVal = document.getElementById('hour').value;
+  render(buildFortune({
+    name: document.getElementById('name').value.trim(),
+    birth: document.getElementById('birth').value,
+    birthHour: hourVal === '' ? null : Number(hourVal),
+  }, data));
+}
+
+document.getElementById('f').addEventListener('submit', run);
+run();
+</script>
+</body>
+</html>

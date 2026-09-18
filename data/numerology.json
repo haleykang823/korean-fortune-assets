@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "title": "생명수(Life Path Number) 데이터",
+    "howTo": "생년월일의 모든 숫자를 한 자리가 될 때까지 더합니다. 예: 1995-08-23 → 1+9+9+5+0+8+2+3 = 37 → 3+7 = 10 → 1. 단 중간 합이 11, 22, 33이면 마스터 수로 보고 멈춥니다.",
+    "note": "이름 수비학(피타고라스식)은 한글에 그대로 적용하기 어렵습니다. 한글 이름은 아래 name-strokes.json의 획수법을 쓰세요."
+  },
+  "numbers": [
+    { "n": 1, "title": "개척자", "keyword": "독립·시작·주도", "strength": "혼자서도 길을 낸다", "caution": "독선과 외로움", "luckyColor": "#E2574C" },
+    { "n": 2, "title": "조율자", "keyword": "협력·감수성·균형", "strength": "사람 사이를 부드럽게 잇는다", "caution": "눈치와 우유부단", "luckyColor": "#C8D6E5" },
+    { "n": 3, "title": "표현가", "keyword": "창의·소통·즐거움", "strength": "분위기를 살리는 재능", "caution": "산만함과 말 많음", "luckyColor": "#F2C14E" },
+    { "n": 4, "title": "건축가", "keyword": "성실·체계·기반", "strength": "하나씩 쌓아 끝을 본다", "caution": "융통성 부족", "luckyColor": "#8A9A5B" },
+    { "n": 5, "title": "모험가", "keyword": "자유·변화·경험", "strength": "새로운 판에서 빛난다", "caution": "싫증과 불안정", "luckyColor": "#4FB0C6" },
+    { "n": 6, "title": "보호자", "keyword": "책임·사랑·돌봄", "strength": "곁을 지키는 따뜻함", "caution": "과한 간섭과 희생", "luckyColor": "#D8A7B1" },
+    { "n": 7, "title": "탐구자", "keyword": "사색·통찰·고요", "strength": "본질을 파고든다", "caution": "고립과 냉소", "luckyColor": "#6B5B95" },
+    { "n": 8, "title": "실현가", "keyword": "성취·현실·힘", "strength": "목표를 숫자로 만든다", "caution": "일중독과 통제욕", "luckyColor": "#4A4A4A" },
+    { "n": 9, "title": "완성자", "keyword": "포용·이상·마무리", "strength": "넓게 보고 품는다", "caution": "감정 과잉과 미련", "luckyColor": "#B08D57" },
+    { "n": 11, "title": "영감의 수(마스터)", "keyword": "직관·영감·각성", "strength": "남이 못 보는 것을 본다", "caution": "예민함과 기복", "luckyColor": "#8E5FBF" },
+    { "n": 22, "title": "건설의 수(마스터)", "keyword": "이상의 현실화", "strength": "큰 그림을 실제로 짓는다", "caution": "부담과 압박", "luckyColor": "#2E8B57" },
+    { "n": 33, "title": "헌신의 수(마스터)", "keyword": "치유·봉사·사랑", "strength": "주변을 회복시킨다", "caution": "자기 소진", "luckyColor": "#F08A5D" }
+  ]
+}

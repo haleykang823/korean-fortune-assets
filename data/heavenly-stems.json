@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "title": "천간(天干) 10간 데이터",
+    "note": "stemIndex = (연도 - 4) % 10. 60갑자는 천간 10 × 지지 12의 최소공배수 60으로 순환합니다.",
+    "example": "1984년 → (1984-4)%10 = 0 → 갑, (1984-4)%12 = 0 → 자 → 갑자년"
+  },
+  "stems": [
+    { "index": 0, "name": "갑", "hanja": "甲", "element": "목", "yinYang": "양", "color": "청", "imagery": "큰 나무", "keyword": "시작·리더십·곧음" },
+    { "index": 1, "name": "을", "hanja": "乙", "element": "목", "yinYang": "음", "color": "청", "imagery": "덩굴·화초", "keyword": "유연함·적응·섬세함" },
+    { "index": 2, "name": "병", "hanja": "丙", "element": "화", "yinYang": "양", "color": "적", "imagery": "태양", "keyword": "밝음·표현·확산" },
+    { "index": 3, "name": "정", "hanja": "丁", "element": "화", "yinYang": "음", "color": "적", "imagery": "촛불·등불", "keyword": "따뜻함·집중·헌신" },
+    { "index": 4, "name": "무", "hanja": "戊", "element": "토", "yinYang": "양", "color": "황", "imagery": "산·대지", "keyword": "안정·포용·중심" },
+    { "index": 5, "name": "기", "hanja": "己", "element": "토", "yinYang": "음", "color": "황", "imagery": "논밭·흙", "keyword": "실속·양육·꼼꼼함" },
+    { "index": 6, "name": "경", "hanja": "庚", "element": "금", "yinYang": "양", "color": "백", "imagery": "무쇠·바위", "keyword": "결단·의리·강직" },
+    { "index": 7, "name": "신", "hanja": "辛", "element": "금", "yinYang": "음", "color": "백", "imagery": "보석·칼날", "keyword": "예리함·세련·자존" },
+    { "index": 8, "name": "임", "hanja": "壬", "element": "수", "yinYang": "양", "color": "흑", "imagery": "바다·큰 강", "keyword": "포용·지혜·흐름" },
+    { "index": 9, "name": "계", "hanja": "癸", "element": "수", "yinYang": "음", "color": "흑", "imagery": "이슬·샘물", "keyword": "직관·비밀·조용한 힘" }
+  ],
+  "branchOrder": ["자", "축", "인", "묘", "진", "사", "오", "미", "신", "유", "술", "해"],
+  "monthStemRule": {
+    "description": "월간(月干) 산출: 인월(1월, 입춘 기준)의 천간은 연간에 따라 정해지고 이후 월마다 +1",
+    "table": {
+      "갑기년": "병인월부터", "을경년": "무인월부터", "병신년": "경인월부터",
+      "정임년": "임인월부터", "무계년": "갑인월부터"
+    },
+    "formula": "인월천간index = [2,4,6,8,0][연간index % 5]  // 병,무,경,임,갑"
+  },
+  "hourStemRule": {
+    "description": "시간(時干) 산출: 자시의 천간은 일간에 따라 정해지고 이후 시진마다 +1",
+    "table": {
+      "갑기일": "갑자시부터", "을경일": "병자시부터", "병신일": "무자시부터",
+      "정임일": "경자시부터", "무계일": "임자시부터"
+    },
+    "formula": "시간index = ((일간index % 5) * 2 + 시지index) % 10"
+  }
+}

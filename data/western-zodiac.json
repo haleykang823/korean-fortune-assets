@@ -1,0 +1,31 @@
+{
+  "meta": {
+    "title": "서양 12별자리(태양궁) 데이터",
+    "note": "경계일(cusp)은 해마다 최대 하루 정도 움직입니다. 정확도가 필요하면 천문 계산 라이브러리를 쓰고, 엔터테인먼트용이면 아래 고정 범위로 충분합니다."
+  },
+  "signs": [
+    { "id": "aries", "ko": "양자리", "en": "Aries", "symbol": "♈", "from": "03-21", "to": "04-19", "element": "불", "modality": "활동", "ruler": "화성", "luckyColor": "#E2574C", "traits": ["추진력", "직진", "솔직"], "shadow": ["성급함", "욱하는 기질"] },
+    { "id": "taurus", "ko": "황소자리", "en": "Taurus", "symbol": "♉", "from": "04-20", "to": "05-20", "element": "흙", "modality": "고정", "ruler": "금성", "luckyColor": "#6B8E4E", "traits": ["끈기", "안정", "감각적"], "shadow": ["고집", "변화 거부"] },
+    { "id": "gemini", "ko": "쌍둥이자리", "en": "Gemini", "symbol": "♊", "from": "05-21", "to": "06-21", "element": "공기", "modality": "변통", "ruler": "수성", "luckyColor": "#F2C14E", "traits": ["호기심", "재치", "소통"], "shadow": ["산만함", "변덕"] },
+    { "id": "cancer", "ko": "게자리", "en": "Cancer", "symbol": "♋", "from": "06-22", "to": "07-22", "element": "물", "modality": "활동", "ruler": "달", "luckyColor": "#C8D6E5", "traits": ["공감", "보호본능", "가족애"], "shadow": ["예민함", "잘 삐짐"] },
+    { "id": "leo", "ko": "사자자리", "en": "Leo", "symbol": "♌", "from": "07-23", "to": "08-22", "element": "불", "modality": "고정", "ruler": "태양", "luckyColor": "#E8A33D", "traits": ["당당함", "관대", "무대 체질"], "shadow": ["자존심", "인정 욕구"] },
+    { "id": "virgo", "ko": "처녀자리", "en": "Virgo", "symbol": "♍", "from": "08-23", "to": "09-22", "element": "흙", "modality": "변통", "ruler": "수성", "luckyColor": "#8A9A5B", "traits": ["꼼꼼함", "분석", "성실"], "shadow": ["완벽주의", "잔걱정"] },
+    { "id": "libra", "ko": "천칭자리", "en": "Libra", "symbol": "♎", "from": "09-23", "to": "10-22", "element": "공기", "modality": "활동", "ruler": "금성", "luckyColor": "#D8A7B1", "traits": ["균형감", "우아함", "조율"], "shadow": ["우유부단", "눈치보기"] },
+    { "id": "scorpio", "ko": "전갈자리", "en": "Scorpio", "symbol": "♏", "from": "10-23", "to": "11-22", "element": "물", "modality": "고정", "ruler": "명왕성(전통: 화성)", "luckyColor": "#6B2D3C", "traits": ["몰입", "통찰", "의리"], "shadow": ["집착", "의심"] },
+    { "id": "sagittarius", "ko": "사수자리", "en": "Sagittarius", "symbol": "♐", "from": "11-23", "to": "12-21", "element": "불", "modality": "변통", "ruler": "목성", "luckyColor": "#8E5FBF", "traits": ["낙천", "모험", "솔직"], "shadow": ["무계획", "말실수"] },
+    { "id": "capricorn", "ko": "염소자리", "en": "Capricorn", "symbol": "♑", "from": "12-22", "to": "01-19", "element": "흙", "modality": "활동", "ruler": "토성", "luckyColor": "#4A4A4A", "traits": ["책임감", "인내", "현실감각"], "shadow": ["경직", "일 중독"] },
+    { "id": "aquarius", "ko": "물병자리", "en": "Aquarius", "symbol": "♒", "from": "01-20", "to": "02-18", "element": "공기", "modality": "고정", "ruler": "천왕성(전통: 토성)", "luckyColor": "#4FB0C6", "traits": ["독창성", "자유", "박애"], "shadow": ["거리두기", "괴짜 기질"] },
+    { "id": "pisces", "ko": "물고기자리", "en": "Pisces", "symbol": "♓", "from": "02-19", "to": "03-20", "element": "물", "modality": "변통", "ruler": "해왕성(전통: 목성)", "luckyColor": "#7FB3D5", "traits": ["감수성", "상상력", "헌신"], "shadow": ["현실도피", "경계 흐림"] }
+  ],
+  "elementGroups": {
+    "불": ["aries", "leo", "sagittarius"],
+    "흙": ["taurus", "virgo", "capricorn"],
+    "공기": ["gemini", "libra", "aquarius"],
+    "물": ["cancer", "scorpio", "pisces"]
+  },
+  "compatibility": {
+    "note": "같은 원소끼리 가장 편하고, 불-공기 / 흙-물 조합이 잘 맞는다고 봅니다.",
+    "friendly": [["불", "공기"], ["흙", "물"]],
+    "tense": [["불", "물"], ["흙", "공기"]]
+  }
+}
